@@ -21,7 +21,7 @@ namespace ecommerce_biu.Utils
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById(long id)
         {
             var item = await _dbSet.FindAsync(id);
             if (item == null) return NotFound();
@@ -37,10 +37,10 @@ namespace ecommerce_biu.Utils
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] T entity)
+        public async Task<IActionResult> Update(long id, [FromBody] T entity)
         {
             var entityId = entity.GetType().GetProperty("Id")?.GetValue(entity);
-            if (entityId == null || (int)entityId != id) return BadRequest();
+            if (entityId == null || (long)entityId != id) return BadRequest();
 
             _dbSet.Update(entity);
             await _context.SaveChangesAsync();
@@ -48,7 +48,7 @@ namespace ecommerce_biu.Utils
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(long id)
         {
             if (id < 1) return BadRequest();
 
