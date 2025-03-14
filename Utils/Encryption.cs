@@ -3,23 +3,25 @@ using System.Text;
 
 namespace ecommerce_biu.Utils
 {
-    public class Encryption
+    public class Encryption(string keyString)
     {
-        public static string DecryptAES256(string cipherData, string keyString)
+        private readonly byte[] _key = Encoding.UTF8.GetBytes(keyString);
+
+        public string DecryptAES256(string cipherData)
         {
-            byte[] key = Encoding.UTF8.GetBytes(keyString);
+            //byte[] key = Encoding.UTF8.GetBytes(keyString);
             byte[] iv = new byte[16];
             try
             {
                 using var aes = Aes.Create();
-                aes.Key = key;
+                aes.Key = _key;
                 aes.IV = iv;
                 aes.Mode = CipherMode.CBC;
                 using var memoryStream =
                    new MemoryStream(Convert.FromBase64String(cipherData));
                 using var cryptoStream =
                        new CryptoStream(memoryStream,
-                           aes.CreateDecryptor(key, iv),
+                           aes.CreateDecryptor(_key, iv),
                            CryptoStreamMode.Read);
                 return new StreamReader(cryptoStream).ReadToEnd();
             }
@@ -30,14 +32,14 @@ namespace ecommerce_biu.Utils
             }
         }
 
-        public static string EncryptAES256(string message, string KeyString)
+        public string EncryptAES256(string message)
         {
-            byte[] Key = ASCIIEncoding.UTF8.GetBytes(KeyString);
+            //byte[] Key = ASCIIEncoding.UTF8.GetBytes(KeyString);
             byte[] IV = new byte[16];
 
             string encrypted = "";
             var rj = Aes.Create();
-            rj.Key = Key;
+            rj.Key = _key;
             rj.IV = IV;
             rj.Mode = CipherMode.CBC;
 
@@ -45,7 +47,7 @@ namespace ecommerce_biu.Utils
             {
                 MemoryStream ms = new();
 
-                using (CryptoStream cs = new(ms, rj.CreateEncryptor(Key, IV), CryptoStreamMode.Write))
+                using (CryptoStream cs = new(ms, rj.CreateEncryptor(_key, IV), CryptoStreamMode.Write))
                 {
                     using (StreamWriter sw = new(cs))
                     {
