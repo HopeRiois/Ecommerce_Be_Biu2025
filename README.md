@@ -35,10 +35,30 @@ Eliminar el rol de prueba
 
 #Merge feature/sprint4 to master
 
+-----
+
 ----- feature sprint5
 
 #Commit Order, Sales and Security
-Se crea los modelos para el manejo de ordenes de compra y ventas, se finaliza la implementaci髇
-de seguridad a trav閟 de jwt y con comprobaciones de roles para los usuarios. Se generan m閠odos
-que faltaban para el sistema de gesti髇 de usuarios de la plataforma, productos entre otros.
+Se crea los modelos para el manejo de ordenes de compra y ventas, se finaliza la implementaci贸n
+de seguridad a trav茅s de jwt y con comprobaciones de roles para los usuarios. Se generan m茅todos
+que faltaban para el sistema de gesti贸n de usuarios de la plataforma, productos entre otros.
 
+M茅todos agregados a api
+![image](https://github.com/user-attachments/assets/9ae3bf28-ac83-4343-90c5-85c6087ecbc4)
+
+Generacion de token con jwt para el inicio de sesi贸n en la plataforma
+![image](https://github.com/user-attachments/assets/be3e74af-9ed9-4252-a73f-2afa55e7a1d8)
+
+Configuraci贸n del swagger para permitir registrar la autorizaci贸n del bearer token
+![image](https://github.com/user-attachments/assets/2c9d08da-ba41-40c4-b7f1-9465e7812d40)
+
+Obtener la orden de compra para el usuario logeado
+![image](https://github.com/user-attachments/assets/75bb7311-61f0-4e00-8459-378761edac3d)
+
+Obtener las ventas realizadas con la plataforma
+![image](https://github.com/user-attachments/assets/1b2ec8c6-82a4-4a01-9864-64221e978f56)
+
+#Merge feature/sprint5 to master
+
+-----
