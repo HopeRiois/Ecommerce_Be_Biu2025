@@ -6,7 +6,7 @@ namespace ecommerce_biu.Models
     public class User
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public required long Id { get; set; }
+        public long Id { get; set; }
         public required string FirstName { get; set; }
         public required string LastName { get; set; }
         public required string UserName { get; set; }
