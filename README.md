@@ -34,3 +34,11 @@ Eliminar el rol de prueba
 ![image](https://github.com/user-attachments/assets/c8c0e9ea-b3a2-410b-806d-80a033ca4f8e)
 
 #Merge feature/sprint4 to master
+
+----- feature sprint5
+
+#Commit Order, Sales and Security
+Se crea los modelos para el manejo de ordenes de compra y ventas, se finaliza la implementación
+de seguridad a través de jwt y con comprobaciones de roles para los usuarios. Se generan métodos
+que faltaban para el sistema de gestión de usuarios de la plataforma, productos entre otros.
+
