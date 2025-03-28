@@ -63,7 +63,7 @@ Obtener las ventas realizadas con la plataforma
 
 -----
 
------ feature sprint5
+----- feature sprint6
 
 #Commit Get products no auth 
 Se genera un nuevo endpoint para obtener los productos sin necesidad de usar token de autenticación
