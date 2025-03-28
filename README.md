@@ -69,5 +69,8 @@ Obtener las ventas realizadas con la plataforma
 Se genera un nuevo endpoint para obtener los productos sin necesidad de usar token de autenticación
 este endpoint será utilizado por el chatbot de OpenAi
 
+![image](https://github.com/user-attachments/assets/99844b27-51cc-4ac6-b261-9cd009207fc3)
+
+#Merge feature/sprint6 to master
 
 -----
