@@ -11,10 +11,16 @@ namespace ecommerce_biu.Services
 
         private readonly CategoryService _categoryService = categoryService;
 
+        public async Task<List<Product>> GetAll()
+        {
+            return await _productRepository.GetAllAsync();
+        }
+
         public async Task<Product?> GetById(long id)
         {
             return await _productRepository.GetProductById(id);
         }
+
 
         public async Task<List<Product>> GetProductsByType(String type)
         {

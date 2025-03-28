@@ -62,3 +62,12 @@ Obtener las ventas realizadas con la plataforma
 #Merge feature/sprint5 to master
 
 -----
+
+----- feature sprint5
+
+#Commit Get products no auth 
+Se genera un nuevo endpoint para obtener los productos sin necesidad de usar token de autenticación
+este endpoint será utilizado por el chatbot de OpenAi
+
+
+-----
